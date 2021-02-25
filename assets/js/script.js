@@ -27,6 +27,45 @@ $(document).ready(function(){
     dayDisplay();
 })
 
+// code to add classes to each time block depending on if they are in the past, present or future
+
+function colorDisplay(){
+
+}
+
+// code to save text to local storage
+
+var hourHandler = function(hourNum){
+
+    var hourBlock = document.getElementById("hour" + hourNum);
+
+    document.getElementById("btn" + hourNum).addEventListener("click", function(){
+        var hour9El = document.querySelector("#hour" + hourNum).value;
+        localStorage.setItem("btn" + hourNum, hour9El);
+    })
+
+    var loadHour = function () {
+
+        hourBlock.innerText = localStorage.getItem("btn" + hourNum);
+
+    }
+
+    loadHour();
+
+
+}
+hourHandler(9);
+hourHandler(10);
+hourHandler(11);
+hourHandler(12);
+hourHandler(1);
+hourHandler(2);
+hourHandler(3);
+hourHandler(4);
+hourHandler(5);
+
+
+
 
 
 
